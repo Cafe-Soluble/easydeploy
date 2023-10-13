@@ -3,7 +3,8 @@ import os
 import time
 
 test = False
-
+script_name="EasyDeploy"
+version="0.1"
 
 def input_user(question, exemple): # cette fonction permet un input avec une correction
     while True:
@@ -14,18 +15,12 @@ def input_user(question, exemple): # cette fonction permet un input avec une cor
             return value
 
 
-script_name="EasyDeploy"
-version="0.1"
-print("Ce script facilite le déploiement en production d'une web app Python en utilisant Flask/Nginx/Gunicorn/Supervisorctl")
+
+print("Ce script facilite le déploiement en production d'une web app Python.")
 continuer=input("Voulez-vous continuer ? Y/n ")
 if continuer.lower() != "y":
     print(f"Exiting {script_name} v{version}")
-else:
-    commandes = ["","","","",""]
-
-
-    # # on change le répertoire de travail du processus principal dans le bon dossier
-    
+else:    
     if test == True:
         user= "jc"
         git_projet= "genfact_check"

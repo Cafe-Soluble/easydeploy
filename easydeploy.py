@@ -1,6 +1,7 @@
 import subprocess
 import os
 import time
+import shutil
 
 test = False
 script_name="EasyDeploy"
@@ -35,7 +36,7 @@ else:
         git_url=input_user("Adresse git à cloner", "git@github.com:Cafe-Soluble/NEWPROJECT.git")
         git_projet=input_user("Nom du projet Github", "plexhelper")
         password_user=input_user(f"Entrez votre mot de passe pour {user}", "password123")
-        server_name=input_user("Nom du serveur ou adresse ip", "prout.jucidulf.fr")
+        server_name=input_user("Nom du serveur ou adresse ip", "prout.jucidful.fr")
         port=input_user("Port","3004")
         app_name = input_user("Nom de l'application (venant de application.py)", "main")
 
@@ -44,6 +45,12 @@ else:
     os.chdir(f"/home/{user}")
     subprocess.check_output(f'git clone {git_url}', shell=True, text=True)
 
+    #Copie du Script startEnv.sh pour environnement de travail dans le dossier de la nouvelle application
+    print("Copie du script startEnv.sh")
+    time.sleep(1)
+    source_path = '/home/{user}/easydeploy/startEnv.sh'
+    destination_path = '/home/{user}/git_projet/'
+    shutil.copy(source_path, destination_path)
 
     #Création d'un environnement de travail
     time.sleep(1)

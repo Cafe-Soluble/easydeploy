@@ -48,8 +48,8 @@ else:
     #Copie du Script startEnv.sh pour environnement de travail dans le dossier de la nouvelle application
     print("Copie du script startEnv.sh")
     time.sleep(1)
-    source_path = '/home/{user}/easydeploy/startEnv.sh'
-    destination_path = '/home/{user}/git_projet/'
+    source_path = f'/home/{user}/easydeploy/startEnv.sh'
+    destination_path = f'/home/{user}/git_projet/'
     shutil.copy(source_path, destination_path)
 
     #Création d'un environnement de travail

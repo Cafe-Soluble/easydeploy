@@ -49,7 +49,7 @@ else:
     print("Copie du script startEnv.sh")
     time.sleep(1)
     source_path = f'/home/{user}/easydeploy/startEnv.sh'
-    destination_path = f'/home/{user}/git_projet/'
+    destination_path = f'/home/{user}/{git_projet}/'
     shutil.copy(source_path, destination_path)
 
     #Création d'un environnement de travail

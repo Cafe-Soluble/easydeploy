@@ -75,13 +75,15 @@ else:
     }}
     }}"""
 
-    with open(f"{git_projet}", "w") as fichier:
+    chemin_temporaire = f"/tmp/{git_projet}"
+    # Création et écriture dans le fichier temporaire
+    with open(chemin_temporaire, "w") as fichier:
         fichier.write(contenu)
-    print(f"Fichier '{git_projet}' créé avec succès.")
+    print(f"Fichier '{chemin_temporaire}' créé avec succès.")
 
     #Déplacement du fichier de config dans /etc/supervisor/conf.d/
     print("Copie du fichier à /etc/supervisor/conf.d/")
-    commande = f"echo {password_user} | sudo -S mv {git_projet} /etc/nginx/sites-enabled/"
+    commande = f"echo {password_user} | sudo -S mv {chemin_temporaire} /etc/nginx/sites-enabled/"
     subprocess.run(commande, shell=True, input=f"{password_user}\n", text=True)
     
     #Création du fichier de configuration supervirsoctl

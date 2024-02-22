@@ -14,3 +14,6 @@ Pas de vérification si le fichier requirements.txt est disponible
 Erreurs courantes :
 * Fichier requirements.txt vide ou inexistant
 * Nom de l'application avec l'extention .py (exemple : main.py au lieu de main)
+
+
+ATTENTION BUG lors qu'on fait avec une app dans le dossier : exemple antifacho/antifacho ... (notamment pour le dossier static)
